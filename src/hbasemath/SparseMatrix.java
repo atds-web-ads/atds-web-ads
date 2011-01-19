@@ -38,7 +38,7 @@ import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.conf.Configuration;
 
 public class SparseMatrix extends AbstractMatrix implements Matrix {
-  static private final String TABLE_PREFIX = SparseMatrix.class.getSimpleName();
+  static private final String TABLE_PREFIX = "SparseMatrix";
 
   public SparseMatrix(Configuration conf, int m, int n) throws IOException {
     setConfiguration(conf);
@@ -142,24 +142,6 @@ public class SparseMatrix extends AbstractMatrix implements Matrix {
     }
   }
 
-  /**
-   * Returns type of matrix
-   */
-  public String getType() {
-    return this.getClass().getSimpleName();
-  }
-
-  @Override
-  public Matrix multAdd(double alpha, Matrix B, Matrix C) throws IOException {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  @Override
-  public void setColumn(int column, Vector vector) throws IOException {
-    // TODO Auto-generated method stub
-
-  }
 
   @Override
   public void setRow(int row, Vector vector) throws IOException {

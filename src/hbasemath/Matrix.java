@@ -148,14 +148,6 @@ public interface Matrix {
    */
   public void setRow(int row, Vector vector) throws IOException;
 
-  /**
-   * Set the column of a matrix to a given vector
-   * 
-   * @param column
-   * @param vector
-   * @throws IOException
-   */
-  public void setColumn(int column, Vector vector) throws IOException;
 
   /**
    * Sets the dimension of matrix
@@ -176,16 +168,7 @@ public interface Matrix {
    */
   public void add(int i, int j, double value) throws IOException;
 
-  /**
-   * C = alpha*A*B + C
-   * 
-   * @param alpha
-   * @param B
-   * @param C
-   * @return C
-   * @throws IOException
-   */
-  public Matrix multAdd(double alpha, Matrix B, Matrix C) throws IOException;
+
 
   /**
    * Save to a table or file
@@ -195,13 +178,6 @@ public interface Matrix {
    * @throws IOException
    */
   public boolean save(String path) throws IOException;
-
-  /**
-   * Returns the matrix type
-   * 
-   * @return the matrix type
-   */
-  public String getType();
 
 
   /**

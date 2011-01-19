@@ -430,10 +430,9 @@ public abstract class AbstractMatrix implements Matrix {
     // mark & update the aliase name in "alise:name" meta column.
     // ! one matrix has only one aliasename now.
     Put put = new Put(Bytes.toBytes(Constants.METADATA));
-    put.add(Bytes.toBytes(Constants.ALIASEFAMILY), Bytes.toBytes("name"), Bytes
-        .toBytes(aliasename));
-    put.add(Constants.ATTRIBUTE, Bytes.toBytes("type"), Bytes.toBytes(this
-        .getType()));
+    put.add(Bytes.toBytes(Constants.ALIASEFAMILY),
+	    Bytes.toBytes("name"),
+	    Bytes.toBytes(aliasename));
     table.put(put);
 
     return hamaAdmin.save(this, aliasename);
